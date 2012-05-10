@@ -32,6 +32,9 @@ describe "Application 'HppleMotion'" do
     h1_items.size.should == 1
     h1 = h1_items.first
     h1.tag.should == "h1"
+    
+    link = parser.xpath("//a").first
+    link["href"].should == "http://google.com"
   end
 
   it "should parse inner_text" do

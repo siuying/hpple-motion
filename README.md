@@ -17,6 +17,9 @@ h1 = parser.xpath("//h1").first
 h1.tag # => "h1"
 h1.to_s # => "Hello"
 
+link = parser.xpath("//a").first
+link["href"] # => "http://google.com"
+
 div = parser.xpath("//div").first
 div.inner_html.should # => "<p>Foo</p><p>Bar</p>"
 ```
