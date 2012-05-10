@@ -7,6 +7,22 @@ Based on [Hpple](https://github.com/topfunky/hpple) and some hacks.
 WARNING: This is a quick hack that I'll use until we can use the real 
 nokorigi. It has not been heavily tested.
 
+## Usage
+
+``` ruby
+html = "<html><body><h1>Hello</h1><div><p>Foo</p><p>Bar</p></div><p><a href=\"http://google.com\">google</a></p></body></html>"
+parser = Hpple.HTML(html)
+
+h1 = parser.xpath("//h1").first
+h1.tag # => "h1"
+h1.to_s # => "Hello"
+
+div = parser.xpath("//div").first
+div.inner_html.should # => "<p>Foo</p><p>Bar</p>"
+```
+
+For more example, check the spec.
+
 ## Install
 
 Add hpple-motion as your project submodule:
