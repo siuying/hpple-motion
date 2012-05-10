@@ -1,0 +1,31 @@
+# Hpple motion
+
+An XML/HTML parser for RubyMotion, with nokogiri style interface.
+
+Based on [Hpple](https://github.com/topfunky/hpple) and some hacks.
+
+WARNING: This is a quick hack that I'll use until we can use the real 
+nokorigi. It has not been heavily tested.
+
+## Install
+
+Add hpple-motion as your project submodule:
+
+    git submodule add git://github.com/siuying/hpple-motion.git vendor/hpple-motion
+
+Add following to your Rakefile:
+
+```ruby
+Motion::Project::App.setup do |app|
+  app.name = 'MyApp'
+
+  # add hpple-motion
+  app.files += Dir.glob(File.join(app.project_dir, 'vendor/hpple-motion/lib/*.rb'))
+
+  # add hpple static library
+  app.vendor_project('vendor/hpple-motion/vendor/hpple', :static)
+  
+  # add libxml2
+  app.libs << ['/usr/lib/libxml2.2.dylib']
+end
+```
