@@ -4,20 +4,21 @@ describe "Application 'HppleMotion'" do
   end
   
   def html
-    "<html><body><h1>Hello</h1><div><p>Foo</p><p>Bar</p></div><p><a href=\"http://google.com\">google</a></p></body></html>"
+    %{<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><body><h1>Hello</h1><div><p>Foo</p><p>Bar</p></div><p><a href="http://google.com">google</a></p></body></html>"}
   end
 
   it "create xml and html parser" do
-    parser = Hpple.XML(xml)
-    parser.is_a?(TFHpple).should.be.true
+    doc = Hpple.XML(xml)
+    doc.is_a?(TFHpple).should.be.true
     
-    parser = Hpple.HTML(html)
-    parser.is_a?(TFHpple).should.be.true
+    doc = Hpple.HTML(html)
+    doc.is_a?(TFHpple).should.be.true
   end
   
   it "parse xml" do
-    parser = Hpple.XML(xml)
-    items = parser.xpath("/folder/file")
+    doc = Hpple.XML(xml)
+    items = doc.xpath("/folder/file")
     items.size.should == 2
 
     items[0].tagName.should == "file"
@@ -27,40 +28,40 @@ describe "Application 'HppleMotion'" do
   end
 
   it "parse html" do
-    parser = Hpple.HTML(html)
-    h1_items = parser.xpath("//h1")
+    doc = Hpple.HTML(html)
+    h1_items = doc.xpath("//h1")
     h1_items.size.should == 1
     h1 = h1_items.first
     h1.tag.should == "h1"
     
-    link = parser.xpath("//a").first
+    link = doc.xpath("//a").first
     link["href"].should == "http://google.com"
   end
 
   it "should parse inner_text" do
-    parser = Hpple.HTML(html)
-    h1 = parser.xpath("//h1").first
+    doc = Hpple.HTML(html)
+    h1 = doc.xpath("//h1").first
     h1.inner_text.should == "Hello"
     
-    div = parser.xpath("//div").first
+    div = doc.xpath("//div").first
     div.inner_text.should == "FooBar"
     
-    p = parser.xpath("//div/p").first
+    p = doc.xpath("//div/p").first
     p.inner_text.should == "Foo"
     
-    p = parser.xpath("//div/p").last
+    p = doc.xpath("//div/p").last
     p.inner_text.should == "Bar"
   end
   
   it "should parse inner_html" do
-    parser = Hpple.HTML(html)
-    h1 = parser.xpath("//h1").first
+    doc = Hpple.HTML(html)
+    h1 = doc.xpath("//h1").first
     h1.inner_html.should == "Hello"
     
-    div = parser.xpath("//div").first
+    div = doc.xpath("//div").first
     div.inner_html.should == "<p>Foo</p><p>Bar</p>"
     
-    myhtml = parser.xpath("//html").first
-    myhtml.to_html.should == html
+    myhtml = doc.xpath("//html").first
+    myhtml.to_html.should == "<html><body><h1>Hello</h1><div><p>Foo</p><p>Bar</p></div><p><a href=\"http://google.com\">google</a></p></body></html>"
   end
 end
