@@ -13,15 +13,18 @@ nokorigi. It has not been heavily tested.
 html = "<html><body><h1>Hello</h1><div><p>Foo</p><p>Bar</p></div><p><a href=\"http://google.com\">google</a></p></body></html>"
 parser = Hpple.HTML(html)
 
+# Get content via #to_s, #to_html and #inner_html
 h1 = parser.xpath("//h1").first
 h1.tag # => "h1"
 h1.to_s # => "Hello"
-
-link = parser.xpath("//a").first
-link["href"] # => "http://google.com"
+h1.to_html # => "<h1>Hello</h1>"
 
 div = parser.xpath("//div").first
-div.inner_html.should # => "<p>Foo</p><p>Bar</p>"
+div.inner_html # => "<p>Foo</p><p>Bar</p>"
+
+# Access attributes directly
+link = parser.xpath("//a").first
+link["href"] # => "http://google.com"
 ```
 
 For more example, check the spec.
