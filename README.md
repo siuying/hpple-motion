@@ -13,16 +13,21 @@ Install motion-hpple:
 
     gem install motion-hpple
 
-
 Add following to your Rakefile:
 
 ```ruby
 $:.unshift("/Library/RubyMotion/lib")
 require 'motion/project'
-require 'motion-hpple'
+require 'motion-cocoapods'
+require 'motion-tidy'
 
 Motion::Project::App.setup do |app|
-  app.name = 'MyApp'
+  app.name = 'sample' 
+  
+  # Only needed if you have not already specifying pods dependency
+  app.pods do
+    dependency 'CTidy', '>= 0.2.0'
+  end
 end
 ```
 
