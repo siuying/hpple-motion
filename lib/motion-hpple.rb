@@ -5,7 +5,7 @@ unless defined?(Motion::Project::Config)
 end
 
 Motion::Project::App.setup do |app|
-  Dir.glob(File.join(File.dirname(__FILE__), 'hpple/*.rb')).each do |file|
+  Dir.glob(File.join(File.dirname(__FILE__), 'motion-hpple/*.rb')).each do |file|
     app.files.unshift(file)
   end
   app.libs << '/usr/lib/libxml2.2.dylib'
