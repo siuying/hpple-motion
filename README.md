@@ -18,7 +18,6 @@ Add following to your Rakefile:
 ```ruby
 $:.unshift("/Library/RubyMotion/lib")
 require 'motion/project'
-require 'motion-cocoapods'
 require 'motion-tidy'
 
 Motion::Project::App.setup do |app|
