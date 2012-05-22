@@ -18,7 +18,7 @@ Add following to your Rakefile:
 ```ruby
 $:.unshift("/Library/RubyMotion/lib")
 require 'motion/project'
-require 'motion-tidy'
+require 'motion-hpple'
 
 Motion::Project::App.setup do |app|
   app.name = 'sample' 
