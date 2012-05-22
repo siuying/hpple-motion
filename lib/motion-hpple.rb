@@ -9,5 +9,7 @@ Motion::Project::App.setup do |app|
     app.files.unshift(file)
   end
   app.libs << '/usr/lib/libxml2.2.dylib'
-  app.vendor_project(File.join(File.dirname(__FILE__), 'vendor/hpple-motion/vendor/hpple'), :static)
+  
+  hpple_vendor = File.expand_path(File.join(File.dirname(__FILE__), '../vendor/hpple'))
+  app.vendor_project(hpple_vendor, :static)
 end
