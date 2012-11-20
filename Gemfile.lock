@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    motion-hpple (0.2.1)
+    motion-hpple (0.3.0)
       motion-cocoapods (~> 1.2.1)
 
 GEM
