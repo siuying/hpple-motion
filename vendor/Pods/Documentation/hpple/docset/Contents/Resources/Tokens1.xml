@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/TFHpple.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/TFHpple</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TFHpple.h</DeclaredIn>
+			
+			<NodeRef refid="1"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TFHpple/initWithData:isXML:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TFHpple.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithData:(NSData *)theData isXML:(BOOL)isDataXML</Declaration>
+			
+			
+			<Anchor>//api/name/initWithData:isXML:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TFHpple/initWithXMLData:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TFHpple.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithXMLData:(NSData *)theData</Declaration>
+			
+			
+			<Anchor>//api/name/initWithXMLData:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TFHpple/initWithHTMLData:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TFHpple.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithHTMLData:(NSData *)theData</Declaration>
+			
+			
+			<Anchor>//api/name/initWithHTMLData:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/TFHpple/hppleWithData:isXML:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TFHpple.h</DeclaredIn>			
+			
+			<Declaration>+ (TFHpple *)hppleWithData:(NSData *)theData isXML:(BOOL)isDataXML</Declaration>
+			
+			
+			<Anchor>//api/name/hppleWithData:isXML:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/TFHpple/hppleWithXMLData:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TFHpple.h</DeclaredIn>			
+			
+			<Declaration>+ (TFHpple *)hppleWithXMLData:(NSData *)theData</Declaration>
+			
+			
+			<Anchor>//api/name/hppleWithXMLData:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/TFHpple/hppleWithHTMLData:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TFHpple.h</DeclaredIn>			
+			
+			<Declaration>+ (TFHpple *)hppleWithHTMLData:(NSData *)theData</Declaration>
+			
+			
+			<Anchor>//api/name/hppleWithHTMLData:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TFHpple/searchWithXPathQuery:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TFHpple.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)searchWithXPathQuery:(NSString *)xPathOrCSS</Declaration>
+			
+			
+			<Anchor>//api/name/searchWithXPathQuery:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TFHpple/peekAtSearchWithXPathQuery:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TFHpple.h</DeclaredIn>			
+			
+			<Declaration>- (TFHppleElement *)peekAtSearchWithXPathQuery:(NSString *)xPathOrCSS</Declaration>
+			
+			
+			<Anchor>//api/name/peekAtSearchWithXPathQuery:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TFHpple/setData:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TFHpple.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSData *data</Declaration>
+			
+			
+			<Anchor>//api/name/data</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/TFHpple/data</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TFHpple.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSData *data</Declaration>
+			
+			
+			<Anchor>//api/name/data</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

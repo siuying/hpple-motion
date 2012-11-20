@@ -1,5 +1,5 @@
 //
-//  TFHppleElement.h
+//  TFHpple.h
 //  Hpple
 //
 //  Created by Geoffrey Grosenbach on 1/31/09.
@@ -27,42 +27,28 @@
 //  OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 //  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+
 #import <Foundation/Foundation.h>
 
+#import "TFHppleElement.h"
 
-@interface TFHppleElement : NSObject {
+@interface TFHpple : NSObject {
 @private
-  
-  NSDictionary * node;
-  TFHppleElement *parent;
+  NSData * data;
+  BOOL isXML;
 }
 
-- (id) initWithNode:(NSDictionary *) theNode;
+- (id) initWithData:(NSData *)theData isXML:(BOOL)isDataXML;
+- (id) initWithXMLData:(NSData *)theData;
+- (id) initWithHTMLData:(NSData *)theData;
 
-+ (TFHppleElement *) hppleElementWithNode:(NSDictionary *) theNode;
++ (TFHpple *) hppleWithData:(NSData *)theData isXML:(BOOL)isDataXML;
++ (TFHpple *) hppleWithXMLData:(NSData *)theData;
++ (TFHpple *) hppleWithHTMLData:(NSData *)theData;
 
-// Returns this tag's innerHTML content.
-@property (nonatomic, readonly) NSString *content;
+- (NSArray *) searchWithXPathQuery:(NSString *)xPathOrCSS;
+- (TFHppleElement *) peekAtSearchWithXPathQuery:(NSString *)xPathOrCSS;
 
-// Returns the name of the current tag, such as "h3".
-@property (nonatomic, readonly) NSString *tagName;
-
-// Returns tag attributes with name as key and content as value.
-//   href  = 'http://peepcode.com'
-//   class = 'highlight'
-@property (nonatomic, readonly) NSDictionary *attributes;
-
-// Returns the children of a given node
-@property (nonatomic, readonly) NSArray *children;
-
-// Returns the first child of a given node
-@property (nonatomic, readonly) TFHppleElement *firstChild;
-
-// the parent of a node
-@property (nonatomic, retain, readonly) TFHppleElement *parent;
-
-// Provides easy access to the content of a specific attribute, 
-// such as 'href' or 'class'.
-- (NSString *) objectForKey:(NSString *) theKey;
+@property (nonatomic, strong, readonly) NSData * data;
 
 @end
