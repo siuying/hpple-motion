@@ -13,5 +13,5 @@ Gem::Specification.new do |gem|
   gem.name          = "motion-hpple"
   gem.require_paths = ["lib"]
   gem.version       = Hpple::VERSION
-  gem.add_runtime_dependency 'motion-cocoapods', '~> 1.2.1'
+  gem.add_runtime_dependency 'motion-cocoapods', '~> 1.3.0'
 end
